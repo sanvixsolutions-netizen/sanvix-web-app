@@ -1,0 +1,113 @@
+.smart-power {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #111111 0%, #1a1a1a 100%);
+  color: #fff;
+}
+
+.smart-power-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.smart-power-content {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.smart-power-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #8028c8, #00ffaa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.smart-power-content p {
+  font-size: 1.2rem;
+  color: #aaa;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.smart-power-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.grid-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.grid-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(128, 40, 200, 0.2);
+}
+
+.grid-item img.power-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(128, 40, 200, 0.1), rgba(0, 255, 170, 0.1));
+  box-shadow: 0 4px 15px rgba(128, 40, 200, 0.2);
+  transition: all 0.3s ease;
+}
+
+.grid-item:hover img.power-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, rgba(128, 40, 200, 0.2), rgba(0, 255, 170, 0.2));
+  box-shadow: 0 8px 25px rgba(128, 40, 200, 0.3);
+}
+
+.grid-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.grid-item p {
+  color: #aaa;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .smart-power {
+    padding: 60px 0;
+  }
+  
+  .smart-power-content h2 {
+    font-size: 2rem;
+  }
+  
+  .smart-power-content p {
+    font-size: 1.1rem;
+  }
+  
+  .smart-power-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(128, 40, 200, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(128, 40, 200, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(128, 40, 200, 0.2);
+  }
+}
