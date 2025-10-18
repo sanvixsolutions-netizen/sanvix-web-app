@@ -1,0 +1,132 @@
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInDown 0.8s ease-out;
+}
+
+header.scrolled {
+  background-color: rgba(17, 17, 17, 0.92);
+  padding: 1rem 5%;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.12);
+}
+
+.logo {
+  font-size: 1.8rem;
+  letter-spacing: 4px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+nav {
+  display: flex;
+  gap: 3.5rem;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-weight: 400;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 0;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #00ffaa;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a.active {
+  color: #00ffaa;
+  font-weight: 500;
+}
+
+nav a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+nav a:hover {
+  color: #00ffaa;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Responsive header styles */
+@media (max-width: 900px) {
+  header, header.scrolled {
+    padding: 1rem 3%;
+  }
+  .logo {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+  }
+  nav {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  header, header.scrolled {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.7rem 4% 0.7rem 4%;
+  }
+  .logo {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  nav {
+    flex-direction: column;
+    gap: 0.7rem;
+    width: 100%;
+  }
+  nav a {
+    font-size: 0.95rem;
+    padding: 6px 0;
+    border-bottom: none;
+  }
+}
